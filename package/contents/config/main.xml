@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
-      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 
   <kcfgfile name=""/>
 
@@ -54,35 +53,163 @@
     <entry name="BlockLabelsCustomFontSize" type="Int">
       <default>0</default>
     </entry>
-    <entry name="BlockLabelsCustomColorForStyleA" type="String">
-      <default></default>
-    </entry>
-    <entry name="BlockLabelsCustomColorForStyleB" type="String">
-      <default></default>
-    </entry>
-    <entry name="BlockLabelsCustomColorForStyleC" type="String">
-      <default></default>
-    </entry>
 
-    <!-- Appearance - Block indicators -->
-    <entry name="BlockIndicatorsStyle" type="Int">
+    <!-- Appearance - Default indicator-->
+    <entry name="DefaultShape" type="Int">
       <default>0</default>
     </entry>
-    <entry name="BlockIndicatorsStyleBlockRadius" type="Int">
+    <entry name="DefaultLineWidth" type="Int">
+      <default>3</default>
+    </entry>
+    <entry name="DefaultRadius" type="Int">
       <default>2</default>
     </entry>
-    <entry name="BlockIndicatorsInvertPosition" type="Bool">
+    <entry name="DefaultInvertPosition" type="Bool">
       <default>false</default>
     </entry>
-    <entry name="BlockIndicatorsCustomColorForStyleA" type="String">
-      <default></default>
+    <entry name="DefaultColorSource" type="Int">
+      <default>0</default>
     </entry>
-    <entry name="BlockIndicatorsCustomColorForStyleB" type="String">
-      <default></default>
-    </entry>
-    <entry name="BlockIndicatorsCustomColorForStyleC" type="String">
+    <entry name="DefaultColor" type="String">
       <default></default>
     </entry>
 
+    <!-- Appearance - Block indicator A-->
+    <entry name="BlockAShapeOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockAShape" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockARadius" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="BlockAInvertPosition" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockAColorOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockAColorSource" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockAColor" type="String">
+      <default></default>
+    </entry>
+
+    <!-- Appearance - Block indicator B-->
+    <entry name="BlockBShapeOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockBShape" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockBRadius" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="BlockBInvertPosition" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockBColorOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockBColorSource" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockBColor" type="String">
+      <default></default>
+    </entry>
+
+    <!-- Appearance - Block indicator C-->
+    <entry name="BlockCShapeOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockCShape" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockCRadius" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="BlockCInvertPosition" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockCColorOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockCColorSource" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockCColor" type="String">
+      <default></default>
+    </entry>
+
+    <!-- Appearance - Block indicator D-->
+    <entry name="BlockDShapeOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockDShape" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockDRadius" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="BlockDInvertPosition" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockDColorOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockDColorSource" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockDColor" type="String">
+      <default></default>
+    </entry>
+
+    <!-- Appearance - Block indicator E-->
+    <entry name="BlockEShapeOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockEShape" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockERadius" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="BlockEInvertPosition" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockEColorOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockEColorSource" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockEColor" type="String">
+      <default></default>
+    </entry>
+
+    <!-- Appearance - Block indicator F-->
+    <entry name="BlockFShapeOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockFShape" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockFRadius" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="BlockFInvertPosition" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockFColorOverride" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="BlockFColorSource" type="Int">
+      <default>0</default>
+    </entry>
+    <entry name="BlockFColor" type="String">
+      <default></default>
+    </entry>
   </group>
 </kcfg>
