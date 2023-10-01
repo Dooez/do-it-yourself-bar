@@ -15,6 +15,7 @@ Item {
 
     Plasmoid.fullRepresentation: Container {}
     Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
+    Plasmoid.constraintHints: PlasmaCore.Types.CanFillArea
 
     property QtObject config: plasmoid.configuration
     property Item container: plasmoid.fullRepresentationItem

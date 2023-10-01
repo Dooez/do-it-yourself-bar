@@ -61,9 +61,6 @@
     <entry name="DefaultLineWidth" type="Int">
       <default>3</default>
     </entry>
-    <entry name="DefaultBlockMargin" type="Int">
-      <default>-3</default>
-    </entry>
     <entry name="DefaultRadius" type="Int">
       <default>2</default>
     </entry>

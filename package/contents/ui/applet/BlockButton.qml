@@ -147,11 +147,7 @@ Component {
         }
 
         Layout.fillHeight: !isVerticalOrientation
-        Layout.topMargin: !isVerticalOrientation ? config.DefaultBlockMargin : 0
-        Layout.bottomMargin: !isVerticalOrientation ? config.DefaultBlockMargin : 0
         Layout.fillWidth: isVerticalOrientation
-        Layout.leftMargin: isVerticalOrientation ? config.DefaultBlockMargin : 0
-        Layout.rightMargin: isVerticalOrientation ? config.DefaultBlockMargin : 0
         clip: true
         color: "transparent"
         opacity: !config.AnimationsEnable ? 1 : 0
