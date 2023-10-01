@@ -146,12 +146,12 @@ Component {
             postHideCallback();
         }
 
-        Layout.topMargin: isVerticalOrientation ? 0 : -5
-        Layout.bottomMargin: isVerticalOrientation? 0 : -5
-        Layout.leftMargin: isVerticalOrientation ? -5 : 0
-        Layout.rightMargin: isVerticalOrientation ? -5 : 0
-        Layout.fillWidth: isVerticalOrientation
         Layout.fillHeight: !isVerticalOrientation
+        Layout.topMargin: !isVerticalOrientation ? config.DefaultBlockMargin : 0
+        Layout.bottomMargin: !isVerticalOrientation ? config.DefaultBlockMargin : 0
+        Layout.fillWidth: isVerticalOrientation
+        Layout.leftMargin: isVerticalOrientation ? config.DefaultBlockMargin : 0
+        Layout.rightMargin: isVerticalOrientation ? config.DefaultBlockMargin : 0
         clip: true
         color: "transparent"
         opacity: !config.AnimationsEnable ? 1 : 0

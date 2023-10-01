@@ -21,6 +21,7 @@ Item {
     // Default style
     property alias cfg_DefaultShape: defaultShapeComboBox.currentIndex
     property alias cfg_DefaultLineWidth: defaultLineWidth.value
+    property alias cfg_DefaultBlockMargin: defaultBlockMargin.value
     property alias cfg_DefaultRadius: defaultRadiusSpinBox.value
     property alias cfg_DefaultInvertPosition: defaultInvertCheckBox.checked
     property alias cfg_DefaultColorSource: defaultColorComboBox.currentIndex
@@ -75,6 +76,8 @@ Item {
     property string cfg_BlockFColor
 
     GridLayout {
+        // Default end
+
         columns: 1
 
         SectionHeader {
@@ -272,6 +275,26 @@ Item {
 
         RowLayout {
             Label {
+                text: "Block margin:"
+            }
+
+            SpinBox {
+                id: defaultBlockMargin
+
+                value: cfg_DefaultBlockMargin
+                minimumValue: -100
+                maximumValue: 100
+                suffix: " px"
+            }
+
+            HintIcon {
+                tooltipText: "Adjust indicator to panel height"
+            }
+
+        }
+
+        RowLayout {
+            Label {
                 text: "Shape:"
             }
 
@@ -360,7 +383,7 @@ Item {
             }
 
         }
-        // Default end
+        // Default End
 
         // A
         SectionHeader {
