@@ -146,8 +146,10 @@ Component {
             postHideCallback();
         }
 
-        Layout.topMargin: -5
-        Layout.bottomMargin: -5
+        Layout.topMargin: isVerticalOrientation ? 0 : -5
+        Layout.bottomMargin: isVerticalOrientation? 0 : -5
+        Layout.leftMargin: isVerticalOrientation ? -5 : 0
+        Layout.rightMargin: isVerticalOrientation ? -5 : 0
         Layout.fillWidth: isVerticalOrientation
         Layout.fillHeight: !isVerticalOrientation
         clip: true
