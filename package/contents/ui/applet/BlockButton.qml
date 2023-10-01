@@ -146,6 +146,8 @@ Component {
             postHideCallback();
         }
 
+        Layout.topMargin: -5
+        Layout.bottomMargin: -5
         Layout.fillWidth: isVerticalOrientation
         Layout.fillHeight: !isVerticalOrientation
         clip: true
@@ -164,7 +166,6 @@ Component {
             property int lineWidth: config.DefaultLineWidth
 
             visible: blockIndicatorStyle != 5
-            // color: getBlockColor()
             color: {
                 return getBlockColor();
             }
