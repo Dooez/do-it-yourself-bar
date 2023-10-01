@@ -101,16 +101,14 @@ Item {
             SpinBox {
                 id: blockButtonsVerticalMarginSpinBox
 
-                enabled: cfg_BlockIndicatorsStyle != 0 && cfg_BlockIndicatorsStyle != 4 && cfg_BlockIndicatorsStyle != 5
                 value: cfg_BlockButtonsVerticalMargin
-                minimumValue: 0
-                maximumValue: 300
+                minimumValue: -150
+                maximumValue: 150
                 suffix: " px"
             }
 
             HintIcon {
-                visible: !blockButtonsVerticalMarginSpinBox.enabled
-                tooltipText: "Not available for the selected indicator style"
+                tooltipText: "Wonky setting, experiment with different combination of margins and spacing"
             }
 
         }
@@ -123,16 +121,14 @@ Item {
             SpinBox {
                 id: blockButtonsHorizontalMarginSpinBox
 
-                enabled: cfg_BlockIndicatorsStyle != 5
                 value: cfg_BlockButtonsHorizontalMargin
-                minimumValue: 0
-                maximumValue: 300
+                minimumValue: -150
+                maximumValue: 150
                 suffix: " px"
             }
 
             HintIcon {
-                visible: !blockButtonsHorizontalMarginSpinBox.enabled
-                tooltipText: "Not available for the selected indicator style"
+                tooltipText: "Wonky setting, experiment with different combination of margins and spacing"
             }
 
         }
