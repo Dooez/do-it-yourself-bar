@@ -12,13 +12,13 @@ DoItYourselfBar::DoItYourselfBar(QObject* parent) :
         childPid(0),
         dbusService(parent),
         dbusSuccess(false),
-        dbusInstanceId(0),
-        cfg_DBusInstanceId(0) {
+        dbusPath(),
+        cfg_DBusPath() {
 
     QObject::connect(&dbusService, &DBusService::dataPassed,
                      this, &DoItYourselfBar::handlePassedData);
 
-    QObject::connect(this, &DoItYourselfBar::cfg_DBusInstanceIdChanged, this, [&] {
+    QObject::connect(this, &DoItYourselfBar::cfg_DBusPathChanged, this, [&] {
         registerDBusService();
         runStartupScript();
         emit dbusSuccessChanged(dbusSuccess);
@@ -40,7 +40,7 @@ void DoItYourselfBar::runStartupScript() {
         childPid = fork();
         if (childPid == 0) {
             QString arg1 = cfg_StartupScriptPath;
-            QString arg2 = QString::number(dbusInstanceId);
+            QString arg2 = dbusPath;
             execl(arg1.toStdString().c_str(),
                   arg1.toStdString().c_str(),
                   arg2.toStdString().c_str(), NULL);
@@ -67,19 +67,17 @@ void DoItYourselfBar::registerDBusService() {
     auto sessionBus = QDBusConnection::sessionBus();
     sessionBus.registerService(SERVICE_NAME);
 
-    if (dbusInstanceId != 0) {
-        QString path = "/id_" + QString::number(dbusInstanceId);
-        sessionBus.unregisterObject(path, QDBusConnection::UnregisterTree);
+    if (!dbusPath.isEmpty()) {
+        sessionBus.unregisterObject(dbusPath, QDBusConnection::UnregisterTree);
     }
 
     dbusSuccess = false;
 
-    if (cfg_DBusInstanceId != 0) {
-        QString path = "/id_" + QString::number(cfg_DBusInstanceId);
-        if (sessionBus.registerObject(path, QString(SERVICE_NAME),
+    if (!cfg_DBusPath.isEmpty()) {
+        if (sessionBus.registerObject(cfg_DBusPath, QString(SERVICE_NAME),
                                       &dbusService, QDBusConnection::ExportAllSlots)) {
             dbusSuccess = true;
-            dbusInstanceId = cfg_DBusInstanceId;
+            dbusPath = cfg_DBusPath;
         }
     }
 }

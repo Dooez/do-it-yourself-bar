@@ -26,7 +26,7 @@ Item {
     DoItYourselfBar {
         id: backend
 
-        cfg_DBusInstanceId: config.DBusInstanceId
+        cfg_DBusPath: config.DBusPath
         cfg_StartupScriptPath: config.StartupScriptPath
     }
 

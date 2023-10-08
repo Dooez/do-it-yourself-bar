@@ -6,7 +6,7 @@ import "../common" as UICommon
 
 Item {
     // D-Bus service
-    property alias cfg_DBusInstanceId: dbusInstanceIdSpinBox.value
+    property alias cfg_DBusPath: dbusPathText.text
 
     // Startup script
     property string cfg_StartupScriptPath
@@ -20,18 +20,17 @@ Item {
 
         RowLayout {
             Label {
-                text: "Instance ID:"
+                text: "Instance Path:"
             }
 
-            SpinBox {
-                id: dbusInstanceIdSpinBox
-                minimumValue: 0
-                maximumValue: 999
-            }
+            TextField {
+                id: dbusPathText
 
-            HintIcon {
-                visible: cfg_DBusInstanceId == 0
-                tooltipText: "The ID must be a NON-ZERO number"
+                TextInput {
+                    id: hiddenTextInput
+                    visible: false
+                    text: dbusPathText.text
+                }
             }
         }
 
@@ -50,9 +49,7 @@ Item {
                     if (plasmoid.configuration.DBusSuccess) {
                         return "You can now pass data to this applet instance"
                     }
-                    return plasmoid.configuration.DBusInstanceId == 0 ?
-                           "The ID must be a NON-ZERO number" :
-                           "There might be a collision, try with a different ID number"
+                    return "There might be a collision, try with a different path"
                 }
             }
         }
@@ -90,7 +87,7 @@ Item {
             HintIcon {
                 visible: startupScriptPathCheckBox.checked
                 tooltipText: "Provide a FULL path to the script (no <tt>~</tt> or <tt>$HOME</tt>)<br><br>
-                             An argument containing the ID will be passed to the script<br>
+                             An argument containing the DBus path will be passed to the script<br>
                              You can access it within the script by reading the <tt>$1</tt> variable"
             }
         }

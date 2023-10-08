@@ -16,9 +16,9 @@ public:
     Q_INVOKABLE void runStartupScript();
     Q_INVOKABLE void runCommand(QString command);
 
-    Q_PROPERTY(unsigned cfg_DBusInstanceId
-               MEMBER cfg_DBusInstanceId
-               NOTIFY cfg_DBusInstanceIdChanged)
+    Q_PROPERTY(QString cfg_DBusPath
+               MEMBER cfg_DBusPath
+               NOTIFY cfg_DBusPathChanged)
 
     Q_PROPERTY(QString cfg_StartupScriptPath
                MEMBER cfg_StartupScriptPath
@@ -29,7 +29,7 @@ signals:
     void invalidDataFormatDetected();
     void blockInfoListSent(QVariantList blockInfoList);
 
-    void cfg_DBusInstanceIdChanged();
+    void cfg_DBusPathChanged();
     void cfg_StartupScriptPathChanged();
 
 private:
@@ -38,10 +38,10 @@ private:
 
     DBusService dbusService;
     bool dbusSuccess;
-    unsigned dbusInstanceId;
+    QString dbusPath;
     void registerDBusService();
 
-    unsigned cfg_DBusInstanceId;
+    QString cfg_DBusPath;
     QString cfg_StartupScriptPath;
 
     void handlePassedData(QString data);
